@@ -1,0 +1,27 @@
+<%= form_with(model: theatre, local: true) do |form| %>
+  <% if theatre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(theatre.errors.count, "error") %> prohibited this theatre from being saved:</h2>
+
+      <ul>
+        <% theatre.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :t_name %>
+    <%= form.text_field :t_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place %>
+    <%= form.text_field :place %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
